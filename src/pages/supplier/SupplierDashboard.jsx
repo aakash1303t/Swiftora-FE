@@ -31,7 +31,7 @@ const SupplierDashboard = () => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token not found");
 
-      const response = await axios.get("http://localhost:5000/api/products/all", {
+      const response = await axios.get("https://swiftora-be.onrender.com/api/products/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -66,7 +66,7 @@ const SupplierDashboard = () => {
   const fetchSupermarkets = async () => {
     try {
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:5000/api/suppliers/tieup-request-details", {
+    const response = await axios.get("https://swiftora-be.onrender.com/api/suppliers/tieup-request-details", {
       headers: { Authorization: `Bearer ${token}`},
     });
     setSupermarkets(response.data || []);

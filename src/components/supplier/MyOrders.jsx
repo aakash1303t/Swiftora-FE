@@ -13,7 +13,7 @@ const MyOrders = () => {
   const fetchOrders = async () => {
     try {
       console.log("Fetching orders with token:", token);
-      const res = await axios.get("http://localhost:5000/api/orders/getorder", {
+      const res = await axios.get("https://swiftora-be.onrender.com/api/orders/getorder", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -34,7 +34,7 @@ const MyOrders = () => {
     try {
       console.log(`Updating status for order ${orderId} to "${newStatus}"`);
       await axios.put(
-        `http://localhost:5000/api/orders/update/${orderId}`,
+        `https://swiftora-be.onrender.com/api/orders/update/${orderId}`,
         { order_status: newStatus }, // ✅ Use snake_case to match Supabase schema
         {
           headers: {

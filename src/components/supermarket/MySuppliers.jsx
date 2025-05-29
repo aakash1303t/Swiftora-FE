@@ -33,7 +33,7 @@ const MySuppliers = () => {
       }
 
       try {
-        const res = await axios.get("http://localhost:5000/api/supermarkets/me", {
+        const res = await axios.get("https://swiftora-be.onrender.com/api/supermarkets/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -67,7 +67,7 @@ const MySuppliers = () => {
 
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/supermarkets/accepted-status/${supermarketId}`,
+          `https://swiftora-be.onrender.com/api/supermarkets/accepted-status/${supermarketId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 

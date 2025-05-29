@@ -40,7 +40,7 @@ const MySupermarketOrders = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          `http://localhost:5000/api/orders/by-supermarket/${supermarketId}`,
+          `https://swiftora-be.onrender.com/api/orders/by-supermarket/${supermarketId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -131,7 +131,7 @@ const MySupermarketOrders = () => {
     console.log("Sending orderPayload:", orderPayload);
 
     try {
-      await axios.post("http://localhost:5000/api/orders/placeorder", orderPayload, {
+      await axios.post("https://swiftora-be.onrender.com/api/orders/placeorder", orderPayload, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("✅ Order placed successfully!"); 

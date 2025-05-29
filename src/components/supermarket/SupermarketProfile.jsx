@@ -41,7 +41,7 @@ const SupermarketProfile = () => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token not found");
 
-      const res = await axios.get("http://localhost:5000/api/supermarkets/me", {
+      const res = await axios.get("https://swiftora-be.onrender.com/api/supermarkets/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -173,7 +173,7 @@ const SupermarketProfile = () => {
       });
 
       const res = await axios.put(
-        `http://localhost:5000/api/supermarkets/${supermarketData.supermarketId}`,
+        `https://swiftora-be.onrender.com/api/supermarkets/${supermarketData.supermarketId}`,
         {
           supermarket_name: supermarketData.supermarket_name,
           phone: supermarketData.phone,

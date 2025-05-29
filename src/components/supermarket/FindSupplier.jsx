@@ -20,7 +20,7 @@ const FindSupplier = () => {
         return;
       }
       try {
-        const res = await axios.get("http://localhost:5000/api/supermarkets/me", {
+        const res = await axios.get("https://swiftora-be.onrender.com/api/supermarkets/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         // The /me endpoint returns supermarket data including user_id
@@ -48,7 +48,7 @@ const FindSupplier = () => {
     const fetchSuppliers = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:5000/api/supermarkets/findsupplier", {
+        const res = await axios.get("https://swiftora-be.onrender.com/api/supermarkets/findsupplier", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const rawSuppliers = res.data.Items || res.data || [];
@@ -75,7 +75,7 @@ const FindSupplier = () => {
     const fetchTieUpStatus = async (supermarketUserId, supplierId) => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/supermarkets/tieup-status?supplierId=${supplierId}`,
+          `https://swiftora-be.onrender.com/api/supermarkets/tieup-status?supplierId=${supplierId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         return res.data.tieUp?.status || "not_requested";
@@ -94,7 +94,7 @@ const FindSupplier = () => {
     setLoadingTieUp(supplierId);
     try {
       await axios.post(
-        "http://localhost:5000/api/supermarkets/request-tieup",
+        "https://swiftora-be.onrender.com/api/supermarkets/request-tieup",
         { supplierId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

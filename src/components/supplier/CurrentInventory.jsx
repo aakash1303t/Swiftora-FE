@@ -35,7 +35,7 @@ const CurrentInventory = ({ inventoryItems, refreshInventory, allowActions = tru
         stock: parseInt(editingItem.stock),
       };
 
-      await axios.put(`http://localhost:5000/api/products/update/${editingItem.sku}`, payload, {
+      await axios.put(`https://swiftora-be.onrender.com/api/products/update/${editingItem.sku}`, payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -64,7 +64,7 @@ const handleDelete = async (sku) => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token not found");
 
-      await axios.delete(`http://localhost:5000/api/products/delete/${sku}`, {
+      await axios.delete(`https://swiftora-be.onrender.com/api/products/delete/${sku}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

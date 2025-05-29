@@ -42,7 +42,7 @@ const SupermarketsSupplied = () => {
       console.log("📦 Token:", token?.substring(0, 50), "...");
       console.log("🆔 supplierId from localStorage:", supplierId);
 
-      const response = await axios.get("http://localhost:5000/api/suppliers/tieup-request-details", {
+      const response = await axios.get("https://swiftora-be.onrender.com/api/suppliers/tieup-request-details", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -90,7 +90,7 @@ const SupermarketsSupplied = () => {
       }
   
       const response = await axios.put(
-        `http://localhost:5000/api/suppliers/tieup/accept/${supermarketId}/${supplierId}`,
+        `https://swiftora-be.onrender.com/api/suppliers/tieup/accept/${supermarketId}/${supplierId}`,
         {},
         {
           headers: {

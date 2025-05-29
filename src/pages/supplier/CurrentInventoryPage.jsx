@@ -19,7 +19,7 @@ const CurrentInventoryPage = () => {
       const token = localStorage.getItem("token");
       if (!token) throw new Error("Token not found");
 
-      const response = await axios.get("http://localhost:5000/api/products/all", {
+      const response = await axios.get("https://swiftora-be.onrender.com/api/products/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

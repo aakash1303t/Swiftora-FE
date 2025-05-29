@@ -28,7 +28,7 @@ const OrderTracking = () => {
         setError("");
 
         const response = await axios.get(
-          `http://localhost:5000/api/orders/supermarket/${supermarketId}`
+          `https://swiftora-be.onrender.com/api/orders/supermarket/${supermarketId}`
         );
         console.log("Orders fetched:", response.data.orders);
         setOrders(response.data.orders);

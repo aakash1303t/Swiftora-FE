@@ -34,7 +34,7 @@ const SupermarketDashboard = () => {
       try {
         setLoadingTieUp(true);
         const res = await axios.get(
-          `http://localhost:5000/api/supermarkets/accepted-status/${supermarketId}`,
+          `https://swiftora-be.onrender.com/api/supermarkets/accepted-status/${supermarketId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -63,7 +63,7 @@ const SupermarketDashboard = () => {
 
       try {
         setLoadingSuppliers(true);
-        const res = await axios.get("http://localhost:5000/api/supermarkets/findsupplier", {
+        const res = await axios.get("https://swiftora-be.onrender.com/api/supermarkets/findsupplier", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const rawSuppliers = res.data.Items || res.data || [];
@@ -92,7 +92,7 @@ const SupermarketDashboard = () => {
       try {
         setLoadingOrders(true);
         const response = await axios.get(
-          `http://localhost:5000/api/orders/supermarket/${supermarketId}`
+          `https://swiftora-be.onrender.com/api/orders/supermarket/${supermarketId}`
         );
         setOrderCount(response.data.orders?.length || 0);
         setErrorOrders("");

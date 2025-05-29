@@ -53,7 +53,7 @@ const AddProductModal = ({ onClose, onProductAdded }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/api/products/add",
+        "https://swiftora-be.onrender.com/api/products/add",
         newProduct,
         {
           headers: { Authorization: `Bearer ${token}` },
